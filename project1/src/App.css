@@ -46,6 +46,11 @@ nav ul{
   height: calc(100vh - 72px);
 }
 
+.pageBody-content {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
 .pageBody-content h1{
   font-size: 108px;
   font-weight: 800;
@@ -61,10 +66,23 @@ nav ul{
 
 .pageBody-button{
   display: flex;
+  flex-direction: row;
   gap:40px
 }
 
 .secondary-btn{
   background: transparent;
   color: grey;
+  border: 1px solid gray;
+}
+
+.pageBody-footer p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.logos{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
