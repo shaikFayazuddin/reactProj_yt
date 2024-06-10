@@ -1,14 +1,24 @@
 import styled from "styled-components"
+import { useState } from "react"
 
 const SelectNumber = () => {
 
   const selectNumber = [1,2,3,4,5,6]
+  // eslint-disable-next-line no-undef
+  const [selectedNumber, setSelectedNumber] = useState()
+
   return (
-    <div>
+    <SelectNumberContainer>
+      <div className="number-box">
       {selectNumber.map((value,i)=>(
-        <Box key={i}>{value}</Box>
+        <Box 
+        key={i} 
+        onClick={()=>setSelectedNumber(value)}
+        isSelected={value == selectedNumber}>{value}</Box>
       ))}
     </div>
+    <p>Select Number</p>
+    </SelectNumberContainer>
   )
 }
 
@@ -20,5 +30,19 @@ const Box = styled.div`
   font-weight: 700;
   display: grid;
   place-content: center;
+  background-color : ${(props)=> (props.isSelected ? "black" : "white")};
+  color : ${(props)=> (!props.isSelected ? "black" : "white")}
+`
+
+const SelectNumberContainer = styled.div`
+  .number-box{
+    display: flex;
+    gap: 24px;
+  }
+  p{
+    font-size: 24px;
+    font-weight: 700px;
+  }
+  
 `
 export default SelectNumber
